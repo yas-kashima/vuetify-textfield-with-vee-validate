@@ -48,9 +48,7 @@
             label="E-mail"
             :model-value="emailValue"
             @update:model-value="
-              (e: string) => {
-                if (errors.length > 0) handleChange(e);
-              }
+              (e: string) => handleChange(e, errors.length > 0)
             "
             @blur="handleChange"
             :error-messages="errors"
